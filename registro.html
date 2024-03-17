@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Videos Juegos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="/img/logos.jpg" width="60" alt="">
+            <strong>Videos Juegos</strong>
+        </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Volver</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul> -->
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Busca tu Juego" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <h1 class="center">Formulario de Registro</h1>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                     <form id="formulario_registro" action="">
+                      <div class="mb-3">
+                        <label for="" class="form-label">Nombre Completo</label>
+                        <input type="text" class="form-control" name="nombre" id="nombre">
+                        <small class="text-danger" id="nombre-error"></small>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="" class="form-label">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control" name="fechanacimiento" id="fechanacimiento">
+                        <small class="text-danger" id="fechanacimiento-error"></small>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" name="direccion" id="direccion">
+                        <small class="text-danger" id="direccion-error"></small>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="" class="form-label">Email</label>
+                        <input type="text" class="form-control" name="email" id="email">
+                        <small class="text-danger" id="email-error"></small>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="" class="form-label">Username</label>
+                        <input type="text" class="form-control" name="username" id="username">
+                        <small class="text-danger" id="username-error"></small>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="" class="form-label">Clave</label>
+                        <input type="text" class="form-control" name="clave" id="clave">
+                        <small class="text-danger" id="clave-error"></small>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="" class="form-label">Información Adicional</label>
+                        <textarea name="informacionadcional" id="informacionadcional" class="form-control" cols="10" rows="5"></textarea>
+                        <small class="text-danger" id="informacionadicional-error"></small>
+                      </div>
+
+                      <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <br>
+                        <button type="reset" class="btn btn-primary">Limpiar</button>
+
+
+                      </div>
+                     </form> 
+                    </div>
+                  </div>
+            </div>
+        </div>
+      </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+
+
+    <script>
+      $(document).ready(function() {
+         $('#formulario_registro').submit(function(evento) {
+              event.preventDefault();
+
+              $('#nombre-error').text('')
+              $('#fechanacimiento-error').text('')
+              $('#email-error').text('')
+              $('#username-error').text('')
+              $('#clave-error').text('')
+
+              if($('#nombre').val() === '') {
+                  $('#nombre-error').text('Por favor, ingrese un nombre válido')
+                  return;
+              }
+
+              if($('#fechanacimiento').val() === '') {
+                  $('#fechanacimiento-error').text('Por favor, ingrese una fecha válida')
+                  return;
+              }
+
+              if($('#email').val() === '') {
+                  $('#email-error').text('Por favor, ingrese un email válido')
+                  return;
+              }
+
+              if($('#username').val() === '') {
+                  $('#username-error').text('Por favor, ingrese un username válido')
+                  return;
+              }
+
+              if($('#clave').val() === '') {
+                  $('#clave-error').text('Por favor, ingrese una clave válida')
+                  return;
+              }
+        
+              this.submit();
+
+         })
+      })
+    </script>
+
+    <!-- <script>
+      const form = document.getElementById('formulario_registro');
+
+      const nombreInput = document.getElementById('nombre');
+      const fechanacimiento = document.getElementById('fechanacimiento');
+      const emailInput = document.getElementById('email');
+      const usernameInput = document.getElementById('username');
+      const claveInput = document.getElementById('clave');
+
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        document.getElementById('nombre-error').innerHTML = '';
+        document.getElementById('fechanacimiento-error').innerHTML = '';
+        document.getElementById('email-error').innerHTML = '';
+        document.getElementById('username-error').innerHTML = '';
+        document.getElementById('clave-error').innerHTML = '';
+
+        if (nombrecompletoInput.value === '') {
+          document.getElementById('nombre-error').innerHTML = 'Por favor, ingrese un nombre válido';
+          return;
+        }
+
+        if (fechanacimientoInput.value === '') {
+          document.getElementById('fechanacimiento-error').innerHTML = 'Por favor, ingrese una fecha válida';
+          return;
+        }
+
+        if (emailInput.value === '') {
+          document.getElementById('email-error').innerHTML = 'Por favor, ingrese un email válido';
+          return;
+        }
+
+        if (usernameInput.value === '') {
+          document.getElementById('username-error').innerHTML = 'Por favor, ingrese un username válido';
+          return;
+        }
+
+        if (claveInput.value === '') {
+          document.getElementById('clave-error').innerHTML = 'Por favor, ingrese una clave válida';
+          return;
+        }
+
+
+        form.submit();
+
+      });
+    </script> -->
+
+    <br>
+    <br>
+    <hr>
+    <nav class="center">
+      <ul>
+        <li>
+          <a href="tel:+56912345678">Contacto</a>
+        </li>
+        <li>
+          <a href="mailto:ultravideosjuegos@gmail.com">Ayuda</a>
+        </li>
+        <li>
+          <a href="http://www.ultravideosjuegos.com/support/terms">Terminos de Uso</a>
+        </li>
+        <li>
+          <a href="http://www.ultravideosjuego.com/support/privacy">Privacidad</a>
+        </li>
+      </ul>
+        
+    </nav>
+</body>
+</html>
