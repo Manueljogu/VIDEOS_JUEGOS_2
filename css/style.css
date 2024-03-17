@@ -1,0 +1,23 @@
+body {
+    background-color: #f3f3f3;
+}
+
+li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: yellow;
+    color: black;
+    border-radius: 16px;
+}
+
+.center {
+    text-align: center;
+}
